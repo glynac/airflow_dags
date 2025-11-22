@@ -59,8 +59,8 @@ docker compose up -d
    ```
    Re‑run DAG to reload from full CSV.
 ## 9.  Runbook
-  ###Updating Schema YAML or DDL When Dataset Evolves
-     -Update schema_expected.yaml
+  ### Updating Schema YAML or DDL When Dataset Evolves
+     - Update schema_expected.yaml
      Open `extraction/customer_care_emails/config/schema_expected.yaml`.
      Add/remove/modify column definitions to match the new CSV headers.
      Example: If a new column priority_level is added:
@@ -69,7 +69,7 @@ docker compose up -d
      type: text
      nullable: true
    ```
-   -Update create_table.sql
+   - Update create_table.sql
      Open extraction/customer_care_emails/config/create_table.sql.
      Add the same column definition in SQL:
    
@@ -96,16 +96,16 @@ docker compose up -d
      priority_level TEXT
    );
    ```
-   -Validate
-      -Run the DAG again. 
-      -The validate_schema task will check that the CSV headers match the YAML.
-      -If mismatched, it will raise an error so you know to fix either the CSV or the YAML.
+   - Validate
+      - Run the DAG again. 
+      - The validate_schema task will check that the CSV headers match the YAML.
+      - If mismatched, it will raise an error so you know to fix either the CSV or the YAML.
    
- -Rerunning with New CSV Drops
-   -Place the new CSV
-   -Copy the new file into:
+ - Rerunning with New CSV Drops
+   - Place the new CSV
+   - Copy the new file into:
    `extraction/customer_care_emails/sample_data/customer_care_emails_sample.csv`
-   -Overwrite the old one, or keep multiple versions with different names if you want history.
+   - Overwrite the old one, or keep multiple versions with different names if you want history.
    
 Clear old DAG runs
    
@@ -127,13 +127,14 @@ Clear old DAG runs
   ```
    
 ###Checklist Before Committing New Datasets
-  -[ ] Add dataset manifest.
-  -[ ] Update schema_expected.yaml.
-  -[ ] Update create_table.sql.
-  -[ ] Provide sample CSV in sample_data/.
-  -[ ] Verify DAG runs successfully end‑to‑end.
+  - [ ] Add dataset manifest.
+  - [ ] Update schema_expected.yaml.
+  - [ ] Update create_table.sql.
+  - [ ] Provide sample CSV in sample_data/.
+  - [ ] Verify DAG runs successfully end‑to‑end.
    
    End‑to‑end reproducibility is guaranteed with the provided YAML, DDL, and sample CSV.
+
 
 
 
