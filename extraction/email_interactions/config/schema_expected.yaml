@@ -1,0 +1,55 @@
+table: public.email_interactions
+primary_key: [thread_id]
+
+columns:
+  - name: subject
+    type: text
+    nullable: true
+
+  - name: sender
+    type: text
+    nullable: true
+
+  - name: receiver
+    type: text
+    nullable: true
+
+  - name: timestamp
+    type: timestamp
+    nullable: true
+
+  - name: message_text
+    type: text
+    nullable: true
+
+  - name: thread_id
+    type: text
+    nullable: false
+
+  - name: email_type
+    type: text
+    nullable: true
+
+  - name: email_state
+    type: text
+    nullable: true
+
+  - name: email_criticality
+    type: text
+    nullable: true
+
+  - name: product_types
+    type: text
+    nullable: true
+
+  - name: agent_effectivity
+    type: text
+    nullable: true
+
+  - name: agent_efficiency
+    type: text
+    nullable: true
+
+  - name: customer_satisfaction
+    type: float
+    nullable: true
